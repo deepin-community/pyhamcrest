@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+# http://wiki.debian.org/Python/LibraryStyleGuide
+
+export PYBUILD_NAME=hamcrest
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
